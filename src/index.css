@@ -1,0 +1,141 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@layer base {
+  :root {
+    --color-warm-cream: #F8F7F0;
+    --color-soft-cream: #F2F1E8;
+    --color-app-bg: #F1F4EF;
+    --color-sidebar-bg: #EDF1EA;
+    --color-primary-surface: #FFFFFF;
+    --color-forest-green: #193D25;
+    --color-primary-action: #285C35;
+    --color-leaf-green: #71966B;
+    --color-soft-green: #DDE8D8;
+    --color-border: #DCE2D8;
+    --color-primary-text: #243428;
+    --color-secondary-text: #697568;
+    --color-muted-text: #8A9286;
+    --color-info-blue: #527DA5;
+    --color-warning-amber: #B9822A;
+    --color-error-red: #B94B43;
+    --color-success-green: #36764A;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    color: #243428;
+    background-color: #F8F7F0;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #243428;
+    background-color: #F8F7F0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .lang-bn {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Bengali', 'SolaimanLipi', 'Kalpurush', sans-serif;
+  }
+
+  .text-size-normal {
+    font-size: 16px;
+  }
+
+  .text-size-large {
+    font-size: 18px;
+  }
+
+  .text-size-extra-large {
+    font-size: 20px;
+  }
+
+  /* Safe area for mobile devices */
+  .safe-area-pb {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+
+  /* Utility for hiding scrollbars while allowing swipe */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom Adaline-inspired Utility Classes */
+.bg-warm-cream { background-color: #F8F7F0; }
+.bg-soft-cream { background-color: #F2F1E8; }
+.bg-app { background-color: #F1F4EF; }
+.bg-sidebar { background-color: #EDF1EA; }
+.bg-forest { background-color: #193D25; }
+.bg-action { background-color: #285C35; }
+.bg-soft-green { background-color: #DDE8D8; }
+
+.text-forest { color: #193D25; }
+.text-action { color: #285C35; }
+.text-leaf { color: #71966B; }
+.text-primary-ink { color: #243428; }
+.text-secondary-ink { color: #697568; }
+.text-muted-ink { color: #8A9286; }
+
+.border-theme { border-color: #DCE2D8; }
+.border-forest { border-color: #193D25; }
+.border-soft-green { border-color: #DDE8D8; }
+
+/* Immersive Hero Ambient Ken-Burns Animation */
+@keyframes heroImmersive {
+  0% {
+    transform: scale(1.10) translateY(6px);
+    opacity: 0.4;
+    filter: blur(6px);
+  }
+  12% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.02) translateY(-4px);
+  }
+  100% {
+    transform: scale(1.08) translateY(4px);
+  }
+}
+
+.animate-hero-immersive {
+  animation: heroImmersive 26s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes heroContentFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-content {
+  animation: heroContentFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

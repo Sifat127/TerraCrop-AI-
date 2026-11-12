@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix TerraCrop AI",
+  "description": "Climate-aware crop rotation decision-support platform utilizing Earth observation, soil conditions, weather trends, and deterministic agro-ecological optimization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
